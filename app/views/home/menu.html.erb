@@ -1,36 +1,30 @@
 <h1>Menu</h1>
 
+
+	  <%= link_to "All", menu_path, class: 'btn btn-secondary'%>
 <% Section.all.each do |section| %>
 	<div class="btn-group" role="group" aria-label="Basic example">
 	  <%= link_to section, menu_path(section: section), class: 'btn btn-secondary'%>
 	</div>
-<% end %> 
-
-<div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sort by
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">A-Z</a>
-    <a class="dropdown-item" href="#">Z-A</a>
-    <a class="dropdown-item" href="#">Price low to high </a>
-    <a class="dropdown-item" href="#">Price high to low</a>
-  </div>
-</div>
-
-
+<% end %>
 
 <% @food_items.each do |food_item| %>
-		<div class="card">
-			<div class="card-header">
-				<%= food_item.name %><br>
-				<%= link_to "order", new_order_path(food_item_id: food_item.id) %>
-			</div>
-			<div class="card-footer">
-				<%= food_item.description %><br>
-				<%= food_item.price %><br>	
-				<%= image_tag food_item.image_url %>
-			</div>			
-		</div>
+
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+<div class="card">
+  <img class="card-img-top"><%= image_tag food_item.image_url %></img>
+  <div class="card-block">
+    <h4 class="card-title"><%= food_item.name %></h4>
+    <p class="card-text">
+    	<%= food_item.description %><br>
+		<%= food_item.price %><br>	
+	</p>
+    <%= link_to "Order", new_order_path(food_item_id: food_item.id), class: 'btn btn-secondary' %>
+  </div>
+</div>
+ </div>
+</div>
+
 		
 <% end %>
