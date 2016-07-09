@@ -9,3 +9,5 @@ class FoodItem < ApplicationRecord
 		end
 	end
 end
+
+

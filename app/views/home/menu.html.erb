@@ -6,9 +6,26 @@
 	</div>
 <% end %> 
 
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort by
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">A-Z</a>
+    <a class="dropdown-item" href="#">Z-A</a>
+    <a class="dropdown-item" href="#">Price low to high </a>
+    <a class="dropdown-item" href="#">Price high to low</a>
+  </div>
+</div>
+
+
+
 <% @food_items.each do |food_item| %>
 		<div class="card">
-			<div class="card-header"><%= food_item.name %></div>
+			<div class="card-header">
+				<%= food_item.name %><br>
+				<%= link_to "order", new_order_path(food_item_id: food_item.id) %>
+			</div>
 			<div class="card-footer">
 				<%= food_item.description %><br>
 				<%= food_item.price %><br>	
