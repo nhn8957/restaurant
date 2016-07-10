@@ -1,12 +1,12 @@
-# CoderRestaurant Website
+# THE RESTAURANT
 
 **THE RESTAURANT** is a Ruby on Rails restaurant website let users order foods.
 
 Submitted by: **Nhiem Ngo**
 
-Time spent: **20** hours spent in total
+Time spent: **18** hours spent in total
 
-URL: **heroku-app-url**
+URL: **http://evening-dusk-99919.herokuapp.com**
 
 ## User Stories
 
